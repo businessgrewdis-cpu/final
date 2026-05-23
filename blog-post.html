@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How Influencer Marketing Can Grow Your Brand | Grewdis Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="images/logo.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .blog-hero {
+      padding: 140px 0 60px;
+      background: linear-gradient(180deg, var(--purple-dark) 0%, var(--purple-deep) 100%);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(123,47,190,0.2);
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(123,47,190,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(123,47,190,0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      transition: var(--transition);
+    }
+    .back-link:hover { color: var(--neon-green); gap: 12px; }
+    .blog-hero-cat {
+      display: inline-block;
+      background: rgba(0,255,136,0.1);
+      border: 1px solid rgba(0,255,136,0.3);
+      color: var(--neon-green);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 5px 14px;
+      border-radius: 50px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .blog-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      max-width: 820px;
+      margin-bottom: 24px;
+    }
+    .blog-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .blog-hero-meta span { display:flex; align-items:center; gap:6px; }
+    .blog-hero-meta i { color: var(--purple-bright); }
+    .blog-post-body {
+      padding: 70px 0 100px;
+      background: var(--purple-deep);
+    }
+    .post-container {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .post-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 40px 0 16px;
+      letter-spacing: 1px;
+      position: relative;
+      padding-left: 16px;
+    }
+    .post-content h2::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--neon-green);
+      box-shadow: 0 0 8px var(--neon-green);
+      border-radius: 2px;
+    }
+    .post-content p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.95;
+      margin-bottom: 22px;
+    }
+    .post-content strong { color: var(--text-primary); }
+    .post-content em { color: var(--neon-green); font-style: normal; }
+    .post-content ul {
+      list-style: none;
+      margin: 16px 0 28px;
+      padding: 0;
+    }
+    .post-content ul li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.75;
+      border-bottom: 1px solid rgba(123,47,190,0.1);
+    }
+    .post-content ul li:last-child { border-bottom: none; }
+    .post-content ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 8px;
+      color: var(--neon-green);
+      text-shadow: 0 0 6px var(--neon-green);
+    }
+    .post-highlight {
+      background: rgba(0,255,136,0.05);
+      border: 1px solid rgba(0,255,136,0.2);
+      border-left: 3px solid var(--neon-green);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-style: italic;
+    }
+    .post-highlight strong { color: var(--neon-green); font-style: normal; }
+    .post-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .post-stat-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    .post-stat-box .num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--neon-green);
+      text-shadow: 0 0 15px rgba(0,255,136,0.4);
+      display: block;
+    }
+    .post-stat-box p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .post-tags { display:flex; flex-wrap:wrap; gap:8px; margin: 32px 0 0; }
+    .post-tag {
+      padding: 5px 14px;
+      background: rgba(123,47,190,0.15);
+      border: 1px solid rgba(123,47,190,0.3);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: var(--purple-bright);
+      transition: var(--transition);
+    }
+    .post-tag:hover {
+      background: rgba(0,255,136,0.1);
+      border-color: var(--neon-green);
+      color: var(--neon-green);
+    }
+    .post-cta-box {
+      background: linear-gradient(135deg, rgba(123,47,190,0.2), rgba(0,255,136,0.08));
+      border: 1px solid rgba(0,255,136,0.2);
+      border-radius: 16px;
+      padding: 36px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .post-cta-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .post-cta-box p { font-size:0.95rem; margin-bottom:20px; }
+
+    /* SIDEBAR */
+    .post-sidebar { position: sticky; top: 100px; }
+    .sidebar-widget {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+    .sidebar-widget h4 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      color: var(--neon-green);
+      border-bottom: 1px solid rgba(0,255,136,0.2);
+      padding-bottom: 12px;
+    }
+    .toc-list { list-style: none; }
+    .toc-list li {
+      margin-bottom: 10px;
+      padding-left: 16px;
+      position: relative;
+    }
+    .toc-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--purple-bright);
+      font-size: 0.7rem;
+    }
+    .toc-list a {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+    .toc-list a:hover { color: var(--neon-green); padding-left: 4px; }
+    .share-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+    .share-btn {
+      flex: 1;
+      min-width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      border: 1px solid;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .related-post {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(123,47,190,0.15);
+    }
+    .related-post:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .related-thumb {
+      width: 70px; height: 70px;
+      background: linear-gradient(135deg, rgba(123,47,190,0.3), rgba(0,255,136,0.1));
+      border-radius: 8px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .related-thumb img { width:100%; height:100%; object-fit:cover; }
+    .related-post h5 {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 4px;
+      letter-spacing: 0.3px;
+    }
+    .related-post a {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--neon-green);
+      transition: var(--transition);
+    }
+    .related-post a:hover { gap: 8px; }
+    @media (max-width: 900px) {
+      .post-container { grid-template-columns: 1fr; }
+      .post-sidebar { position: static; }
+      .post-stat-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .post-stat-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+  <div class="cursor-outer"></div>
+  <div class="cursor-inner"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Grewdis" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+        <span class="logo-text" style="display:none">GREWDIS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#services" class="nav-link">Services</a></li>
+        <li><a href="index.html#creators" class="nav-link">Creators</a></li>
+        <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="index.html#blog" class="nav-link active">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn-neon nav-cta">Get Started</a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- BLOG HERO -->
+  <div class="blog-hero">
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="container">
+      <a href="index.html#blog" class="back-link"><i class="fa fa-arrow-left"></i> Back to Blog</a>
+      <div class="blog-hero-cat">Influencer Marketing</div>
+      <h1>How Influencer Marketing Can <span class="neon-text">Grow Your Brand</span></h1>
+      <div class="blog-hero-meta">
+        <span><i class="fa fa-user"></i> Grewdis Team</span>
+        <span><i class="fa fa-calendar"></i> May 2025</span>
+        <span><i class="fa fa-clock"></i> 8 min read</span>
+        <span><i class="fa fa-eye"></i> 2,400+ views</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG BODY -->
+  <div class="blog-post-body">
+    <div class="post-container">
+
+      <!-- MAIN CONTENT -->
+      <article class="post-content">
+
+        <p>In today's hyper-connected digital world, <strong>traditional advertising is rapidly losing its grip</strong> on consumers. People skip ads, install adblockers, and tune out branded content. But they don't tune out the creators they follow, trust, and admire. This is exactly where <em>influencer marketing</em> becomes a game-changer — and exactly why brands are investing billions into it.</p>
+
+        <p>Influencer marketing isn't just a trend. It's a fundamental shift in how brands communicate. At <strong>Grewdis</strong>, we've seen firsthand how a single well-executed influencer campaign can do what months of traditional advertising could never achieve.</p>
+
+        <div class="post-highlight">
+          <strong>"People don't buy products. They buy people."</strong> When a trusted creator recommends your brand, it carries the weight of a personal recommendation — not a paid advertisement. That's the power of influencer marketing done right.
+        </div>
+
+        <h2>What Is Influencer Marketing?</h2>
+        <p>Influencer marketing is the practice of partnering with individuals who have built an engaged audience in a specific niche — whether that's fashion, tech, food, fitness, finance, or gaming — to promote your brand's products or services.</p>
+        <p>Unlike traditional celebrity endorsements, modern influencer marketing spans a wide spectrum: from <strong>mega-influencers</strong> with millions of followers to <strong>micro-influencers</strong> with highly niche, deeply engaged communities of just 10,000–100,000 followers. Each tier has its own strengths, and the right strategy depends entirely on your goals.</p>
+
+        <div class="post-stat-row">
+          <div class="post-stat-box">
+            <span class="num">11×</span>
+            <p>Higher ROI vs traditional digital ads</p>
+          </div>
+          <div class="post-stat-box">
+            <span class="num">92%</span>
+            <p>Consumers trust peer recommendations</p>
+          </div>
+          <div class="post-stat-box">
+            <span class="num">₹2200Cr</span>
+            <p>India influencer market by 2025</p>
+          </div>
+        </div>
+
+        <h2>Why Influencer Marketing Works</h2>
+        <p>The psychology is simple: <strong>people trust people, not logos.</strong> When a creator you follow every day tells you about a product they genuinely love, your brain doesn't process it as an advertisement — it processes it as a recommendation from a friend. This is called <em>parasocial trust</em>, and it's incredibly powerful for brand conversion.</p>
+        <p>Here's why influencer marketing consistently outperforms traditional advertising:</p>
+        <ul>
+          <li><strong>Authenticity:</strong> Creators produce content in their own voice, making brand messaging feel genuine and relatable rather than forced.</li>
+          <li><strong>Targeted Reach:</strong> Instead of broadcasting to millions of uninterested people, you reach thousands of highly relevant, niche-specific audiences.</li>
+          <li><strong>Cost-Effective:</strong> A well-matched micro-influencer campaign often delivers better engagement and ROI than expensive TV or print placements.</li>
+          <li><strong>Content Creation:</strong> You don't just get reach — you get professional, platform-native content that can be repurposed across your own channels.</li>
+          <li><strong>SEO & Social Proof:</strong> Influencer mentions generate organic backlinks, shares, and user-generated content that builds long-term brand authority.</li>
+          <li><strong>Rapid Trend Adoption:</strong> Creators are at the pulse of their platform. They know what formats, sounds, and styles are driving engagement right now.</li>
+        </ul>
+
+        <h2>How Grewdis Runs Influencer Campaigns</h2>
+        <p>At Grewdis, we don't just connect brands with influencers — we engineer campaigns from the ground up with a data-backed strategy that maximizes return at every step.</p>
+        <p>Our process is built on four pillars:</p>
+        <ul>
+          <li><strong>Discovery & Vetting:</strong> We identify influencers using audience demographics, engagement rate analysis, brand alignment, and authenticity scores — not just follower counts.</li>
+          <li><strong>Creative Brief & Collaboration:</strong> We co-create content briefs that give creators enough freedom to be authentic while ensuring brand messages hit every key point.</li>
+          <li><strong>Campaign Execution:</strong> We manage contracts, timelines, content approvals, posting schedules, and platform-specific optimizations across Instagram, YouTube, and more.</li>
+          <li><strong>Analytics & Reporting:</strong> We deliver detailed post-campaign reports covering reach, engagement, CPM, conversions, and actionable insights for your next campaign.</li>
+        </ul>
+
+        <h2>Choosing the Right Influencer Tier for Your Brand</h2>
+        <p>One of the most common mistakes brands make is chasing the biggest numbers. But <strong>bigger doesn't always mean better</strong> in influencer marketing. Here's a quick breakdown of influencer tiers and when to use each:</p>
+        <ul>
+          <li><strong>Nano Influencers (1K–10K followers):</strong> Hyper-local, highly trusted, ideal for local brands or community-focused campaigns. Engagement rates can be 8–15%.</li>
+          <li><strong>Micro Influencers (10K–100K followers):</strong> The sweet spot for most campaigns. Niche audiences, strong engagement, affordable rates, and authentic content. Best ROI for D2C brands.</li>
+          <li><strong>Macro Influencers (100K–1M followers):</strong> Great for brand awareness and reach. Higher cost, but excellent for product launches and national campaigns.</li>
+          <li><strong>Mega/Celebrity Influencers (1M+ followers):</strong> Maximum visibility and prestige. Best for massive launches, IPOs, or brand repositioning at scale.</li>
+        </ul>
+
+        <div class="post-highlight">
+          At Grewdis, our <em>1,200+ vetted creator network</em> spans all tiers and niches — from finance and gaming to fashion and food. We match brands to the <strong>right voice</strong>, not just the loudest one.
+        </div>
+
+        <h2>The Future of Influencer Marketing in India</h2>
+        <p>India is experiencing a creator economy explosion unlike anywhere else in the world. With over <strong>700 million internet users</strong> and the rise of regional-language content, the opportunity for brands to connect with hyper-local audiences through influencer marketing has never been greater.</p>
+        <p>Platforms like Instagram Reels, YouTube Shorts, and emerging platforms are minting new creators every day. Brands that build influencer partnerships now are laying the foundation for <strong>long-term community equity</strong> that competitors will struggle to replicate.</p>
+        <p>The brands winning in 2025 aren't the ones with the biggest ad budgets — they're the ones building genuine relationships through authentic creator partnerships. And that's exactly what Grewdis does best.</p>
+
+        <h2>Ready to Grow Your Brand?</h2>
+        <p>If you're a brand looking to leverage influencer marketing — whether you're just starting out or ready to scale — Grewdis has the network, the strategy, and the execution muscle to make it happen. With <strong>100+ campaigns delivered</strong> and an <strong>87% client retention rate</strong>, we don't just promise results. We deliver them.</p>
+
+        <div class="post-tags">
+          <span class="post-tag">Influencer Marketing</span>
+          <span class="post-tag">Digital Branding</span>
+          <span class="post-tag">Creator Economy</span>
+          <span class="post-tag">Brand Growth</span>
+          <span class="post-tag">Social Media</span>
+          <span class="post-tag">India Marketing</span>
+          <span class="post-tag">ROI</span>
+        </div>
+
+        <div class="post-cta-box">
+          <h3>Want to <span class="neon-text">Grow Your Brand</span> with Influencer Marketing?</h3>
+          <p>Let's talk strategy. Our team at Grewdis is ready to build your perfect campaign.</p>
+          <a href="index.html#contact" class="btn-neon">Get a Free Consultation <i class="fa fa-arrow-right"></i></a>
+        </div>
+
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="post-sidebar">
+        <div class="sidebar-widget">
+          <h4>Table of Contents</h4>
+          <ul class="toc-list">
+            <li><a href="#">What Is Influencer Marketing?</a></li>
+            <li><a href="#">Why It Works</a></li>
+            <li><a href="#">How Grewdis Runs Campaigns</a></li>
+            <li><a href="#">Choosing the Right Tier</a></li>
+            <li><a href="#">The Future in India</a></li>
+            <li><a href="#">Ready to Grow?</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h4>Share This Article</h4>
+          <div class="share-btns">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=grewdis.in" target="_blank" class="share-btn fb" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/intent/tweet?text=How+Influencer+Marketing+Can+Grow+Your+Brand&url=grewdis.in" target="_blank" class="share-btn tw" title="Share on Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=grewdis.in" target="_blank" class="share-btn li" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/?text=How+Influencer+Marketing+Can+Grow+Your+Brand+-+grewdis.in" target="_blank" class="share-btn wa" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <h4>Related Articles</h4>
+          <div class="related-post">
+            <div class="related-thumb">
+              <img src="https://i.ibb.co/Qvz69Wh6/top-5-niche.jpg" alt="Top Niches"/>
+            </div>
+            <div>
+              <h5>Top 5 Niches Dominating Influencer Marketing in 2025</h5>
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="related-post">
+            <div class="related-thumb">
+              <img src="https://i.ibb.co/gMX1QQqQ/micro-vs-macro-influncer.jpg" alt="Micro vs Macro"/>
+            </div>
+            <div>
+              <h5>Micro vs Macro Influencers: Which Is Right for Your Brand?</h5>
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="related-post">
+            <div class="related-thumb">
+              <img src="https://i.ibb.co/HfsnzWJx/why-short-film.jpg" alt="Short Form"/>
+            </div>
+            <div>
+              <h5>Why Short-Form Video Is the Future of Brand Storytelling</h5>
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget" style="text-align:center;">
+          <h4>Work With Grewdis</h4>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Ready to launch your influencer campaign? Let's build something amazing.</p>
+          <a href="index.html#contact" class="btn-neon btn-sm btn-full">Get Started <i class="fa fa-arrow-right"></i></a>
+          <div style="margin-top:12px;">
+            <a href="https://wa.link/hhix4l" target="_blank" class="btn-neon btn-sm btn-full wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Grewdis" class="footer-logo" onerror="this.style.display='none'"/>
+          <span class="footer-logo-text">GREWDIS</span>
+          <p>India's leading influencer marketing agency — turning creators into brand growth engines.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/grewdis.in/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/grew.disin" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@grewdis" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/company/grewdis/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/grewdis?s=20" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.link/hhix4l" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Influencer Campaigns</a></li>
+            <li><a href="index.html#services">Brand Strategy</a></li>
+            <li><a href="index.html#services">Content Production</a></li>
+            <li><a href="index.html#services">Social Media</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa fa-phone"></i> <a href="tel:+918521912184">+91 85219 12184</a></p>
+          <p><i class="fa fa-envelope"></i> <a href="mailto:collab@grewdis.in">collab@grewdis.in</a></p>
+          <p><i class="fa fa-location-dot"></i> Patna, Bihar, India</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 <span class="neon-text">Grewdis</span>. All rights reserved.</p>
+        <p class="footer-tagline">Powered by Creativity. Driven by Data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop"><i class="fa fa-chevron-up"></i></button>
+  <script src="script.js"></script>
+</body>
+</html>
