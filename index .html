@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grewdis | Influencer Marketing Agency</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ── Related Article Thumbnail Layout ── */
+    .related-article {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .related-article .blog-img {
+      flex-shrink: 0;
+      width: 70px;
+      height: 70px;
+    }
+    .related-article .blog-img img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+    .related-article .blog-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .related-article .blog-body h4 {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin: 4px 0 6px;
+      white-space: normal;
+    }
+    @media (max-width: 420px) {
+      .related-article {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .related-article .blog-img,
+      .related-article .blog-img img {
+        width: 100%;
+        height: 140px;
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PARTICLE CANVAS -->
+  <canvas id="particles"></canvas>
+
+  <!-- CURSOR -->
+  <div class="cursor-outer"></div>
+  <div class="cursor-inner"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <img src="https://i.ibb.co/39z3kJj5/logo.png" alt="Grewdis Logo"/>
+        <span class="logo-text-static">Grewdis</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#stats" class="nav-link">Stats</a></li>
+        <li><a href="#creators" class="nav-link">Creators</a></li>
+        
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-neon nav-cta">Get Started</a>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="hero-glow glow-3"></div>
+    <div class="scanlines"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>India’s Top Influencer Marketing Agency</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line-1">GROW YOUR</span>
+        <span class="line-2 neon-text">STORY</span>
+        <span class="line-3">WITH US</span>
+      </h1>
+      <p class="hero-sub">We connect brands with the right influencers to drive real growth, real reach, and real results - powered by Grewdis.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-neon">Get Started <i class="fa fa-arrow-right"></i></a>
+        <a href="#services" class="btn-ghost">Our Services <i class="fa fa-chevron-down"></i></a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat"><span class="h-num" data-target="1200">0</span><span>+</span><p>Creators</p></div>
+        <div class="h-stat-divider"></div>
+        <div class="h-stat"><span class="h-num" data-target="87">0</span><span>%</span><p>Client Retention</p></div>
+        <div class="h-stat-divider"></div>
+        <div class="h-stat"><span class="h-num" data-target="100">0</span><span>+</span><p>Campaigns Delivered</p></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-circle-ring ring-1"></div>
+      <div class="hero-circle-ring ring-2"></div>
+      <div class="hero-circle-ring ring-3"></div>
+      <div class="hero-center-orb">
+        <img src="https://i.ibb.co/39z3kJj5/logo.png" alt="Grewdis Logo"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label">// WHO WE ARE</div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 class="section-title">We Are <span class="neon-text">Grewdis</span></h2>
+          <p class="about-desc">Grewdis is a next-generation <strong>Influencer Marketing & Digital Branding Agency</strong> based in Patna, Bihar — but our reach is <em>pan-India</em> and growing global. We believe every brand has a story worth telling, and we find the perfect creator voices to tell it.</p>
+          <p class="about-desc">From micro-influencers with hyper-engaged communities to macro creators with massive reach, we curate data-driven campaigns that generate authentic connections between brands and audiences. Our team lives at the intersection of creativity, technology, and strategy.</p>
+          <p class="about-desc">Whether you're a startup looking to make noise or an established brand ready to dominate — <strong>Grewdis turns attention into action.</strong></p>
+          <div class="about-tags">
+            <span class="tag">Influencer Marketing</span>
+            <span class="tag">Brand Strategy</span>
+            <span class="tag">Content Creation</span>
+            <span class="tag">Social Media Growth</span>
+            <span class="tag">Campaign Analytics</span>
+            <span class="tag">Creator Network</span>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="about-card-stack">
+            <div class="about-card ac-1">
+              <i class="fa fa-bolt"></i>
+              <h4>Fast Execution</h4>
+              <p>Campaigns launched within days, not months.</p>
+            </div>
+            <div class="about-card ac-2">
+              <i class="fa fa-chart-line"></i>
+              <h4>Data Driven</h4>
+              <p>Every decision backed by real metrics & ROI.</p>
+            </div>
+            <div class="about-card ac-3">
+              <i class="fa fa-users"></i>
+              <h4>1.2K+ Creators</h4>
+              <p>Vetted influencers across every niche.</p>
+            </div>
+            <div class="about-card ac-4">
+              <i class="fa fa-shield-halved"></i>
+              <h4>Trusted by Brands</h4>
+              <p>87% client retention — results that speak.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-label">// WHAT WE DO</div>
+      <h2 class="section-title text-center">Our <span class="neon-text">Services</span></h2>
+      <p class="section-sub text-center">End-to-end influencer marketing solutions crafted to scale your brand.</p>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa fa-bullhorn"></i></div>
+          <h3>Influencer Campaign Management</h3>
+          <p>Full-funnel campaign planning, creator outreach, content approval, and performance tracking — all handled by our team.</p>
+          <div class="service-tag">Most Popular</div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa fa-palette"></i></div>
+          <h3>Brand Identity & Strategy</h3>
+          <p>Logo design, brand guidelines, positioning strategy, and visual storytelling that makes your brand impossible to ignore.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa fa-video"></i></div>
+          <h3>Content Production</h3>
+          <p>Short-form videos, reels, YouTube integrations, and branded content produced by our creator network for maximum engagement.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa fa-magnifying-glass-chart"></i></div>
+          <h3>Social Media Marketing</h3>
+          <p>Organic growth strategies, paid amplification, and community management across Instagram, YouTube, Twitter, and LinkedIn.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa fa-network-wired"></i></div>
+          <h3>Creator Network Access</h3>
+          <p>Get exclusive access to our database of 1,200+ vetted influencers across fashion, tech, food, lifestyle, gaming, and more.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa fa-chart-pie"></i></div>
+          <h3>Analytics & ROI Reporting</h3>
+          <p>Detailed campaign reports with reach, engagement, conversions, and real-time dashboards to measure what truly matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS SECTION ===== -->
+  <section class="stats section" id="stats">
+    <div class="stats-bg-glow"></div>
+    <div class="container">
+      <div class="section-label">// THE NUMBERS</div>
+      <h2 class="section-title text-center">Why Brands <span class="neon-text">Choose Us</span></h2>
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fa fa-users"></i></div>
+          <div class="stat-number"><span class="count" data-target="1200">0</span><span class="stat-plus">+</span></div>
+          <div class="stat-label">Active Creators</div>
+          <div class="stat-bar"><div class="stat-fill" style="width:90%"></div></div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fa fa-handshake"></i></div>
+          <div class="stat-number"><span class="count" data-target="87">0</span><span class="stat-plus">%</span></div>
+          <div class="stat-label">Client Retention Rate</div>
+          <div class="stat-bar"><div class="stat-fill" style="width:87%"></div></div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fa fa-rocket"></i></div>
+          <div class="stat-number"><span class="count" data-target="100">0</span><span class="stat-plus">+</span></div>
+          <div class="stat-label">Campaigns Delivered</div>
+          <div class="stat-bar"><div class="stat-fill" style="width:80%"></div></div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fa fa-globe"></i></div>
+          <div class="stat-number"><span class="count" data-target="15">0</span><span class="stat-plus">+</span></div>
+          <div class="stat-label">Cities Covered</div>
+          <div class="stat-bar"><div class="stat-fill" style="width:70%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOP CREATORS SECTION ===== -->
+  <section class="creators section" id="creators">
+    <div class="container">
+      <div class="section-label">// OUR NETWORK</div>
+      <h2 class="section-title text-center">Our Top <span class="neon-text">Creators</span></h2>
+      <p class="section-sub text-center">Meet some of the incredible voices powering Grewdis campaigns.</p>
+      <div class="creators-grid">
+    <div class="creator-card reveal">
+      <div class="creator-img-wrap">
+        <img src="https://i.ibb.co/mrt1qWwp/kanika.png" alt="Creator Poster"/>
+        <div class="creator-glow"></div>
+      </div>
+    </div>
+    
+    <div class="creator-card reveal">
+      <div class="creator-img-wrap">
+        <img src="https://i.ibb.co/pjdsMSd0/apoorva.png" alt="Creator Poster"/>
+        <div class="creator-glow"></div>
+      </div>
+    </div>
+    
+    <div class="creator-card reveal">
+      <div class="creator-img-wrap">
+        <img src="https://i.ibb.co/GvDVgb8p/harshbeniwal.png" alt="Creator Poster"/>
+        <div class="creator-glow"></div>
+      </div>
+    </div>
+    
+    <div class="creator-card reveal">
+      <div class="creator-img-wrap">
+        <img src="https://i.ibb.co/wD0bchw/taiyabalam.png" alt="Creator Poster"/>
+        <div class="creator-glow"></div>
+      </div>
+    </div>
+    
+    <div class="creator-card reveal">
+      <div class="creator-img-wrap">
+        <img src="https://i.ibb.co/mV8k61P3/aryankelvin.png" alt="Creator Poster"/>
+        <div class="creator-glow"></div>
+      </div>
+    </div>
+    
+    <div class="creator-card reveal">
+      <div class="creator-img-wrap">
+        <img src="https://i.ibb.co/j9pzm4Ck/rockysharma.png" alt="Creator Poster"/>
+        <div class="creator-glow"></div>
+      </div>
+    </div>
+    
+    <div class="creator-card reveal">
+      <div class="creator-img-wrap">
+        <img src="https://i.ibb.co/xKzQ3PhF/komalpandey.png" alt="Creator Poster"/>
+        <div class="creator-glow"></div>
+      </div>
+    </div>
+    </div>
+    <div class="creators-cta">
+      <h3 class="section-title" style="margin-bottom:24px;">Join Our <span class="neon-text">Creator Network</span></h3>
+      <a href="https://forms.gle/gbb2XF8WwswtseoL6" target="_blank" rel="noopener" class="btn-neon">Join Now <i class="fa fa-arrow-right"></i></a>
+    </div>
+    </div>
+  </section>
+  <section class="blog section" id="blog">
+    <div class="container">
+      <div class="section-label">// INSIGHTS</div>
+      <h2 class="section-title text-center">From Our <span class="neon-text">Blog</span></h2>
+      <p class="section-sub text-center">Stay ahead with the latest from the world of influencer marketing.</p>
+      <div class="blog-grid">
+
+        <!-- MAIN BLOG POST -->
+        <article class="blog-card blog-main reveal">
+          <div class="blog-img">
+            <!-- Place blog1.jpg inside images/ folder -->
+            <img src="https://i.ibb.co/3yc7Ln1X/how-influncer-marketing.jpg" alt="Blog Image"/>
+            <span class="blog-cat">Featured</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta"><i class="fa fa-calendar"></i> May 2025 &nbsp;|&nbsp; <i class="fa fa-user"></i> Grewdis Team</div>
+            <h3>How Influencer Marketing Can Grow Your Brand</h3>
+            <p>In today's hyper-connected digital world, traditional advertising is losing its grip. Consumers trust people more than brands — and that's exactly where influencer marketing becomes a game-changer...</p>
+            <a href="blog-post.html" class="btn-neon btn-sm">Read Full Article <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <div class="blog-side">
+          <article class="blog-card blog-mini related-article reveal">
+            <div class="blog-img">
+              <img src="https://i.ibb.co/Qvz69Wh6/top-5-niche.jpg" alt="Top 5 Niches Dominating Influencer Marketing in 2025"/>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><i class="fa fa-calendar"></i> April 2025</div>
+              <h4>Top 5 Niches Dominating Influencer Marketing in 2025</h4>
+              <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="blog-card blog-mini related-article reveal">
+            <div class="blog-img">
+              <img src="https://i.ibb.co/gMX1QQqQ/micro-vs-macro-influncer.jpg" alt="Micro vs Macro Influencers"/>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><i class="fa fa-calendar"></i> March 2025</div>
+              <h4>Micro vs Macro Influencers: Which One Is Right for Your Brand?</h4>
+              <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="blog-card blog-mini related-article reveal">
+            <div class="blog-img">
+              <img src="https://i.ibb.co/HfsnzWJx/why-short-film.jpg" alt="Why Short-Form Video Is the Future of Brand Storytelling"/>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta"><i class="fa fa-calendar"></i> Feb 2025</div>
+              <h4>Why Short-Form Video Is the Future of Brand Storytelling</h4>
+              <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-label">// GET IN TOUCH</div>
+      <h2 class="section-title text-center">Let's <span class="neon-text">Collaborate</span></h2>
+      <p class="section-sub text-center">Ready to grow your brand? Reach out and let's make it happen.</p>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa fa-phone"></i></div>
+            <div>
+              <h4>Phone / WhatsApp</h4>
+              <a href="tel:+918521912184">+91 85219 12184</a><br/>
+              <a href="https://wa.link/hhix4l" target="_blank" rel="noopener">Chat on WhatsApp <i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:collab@grewdis.in">collab@grewdis.in</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa fa-location-dot"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>Patna, Bihar, India</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm" method="POST">
+
+          <!-- ╔══════════════════════════════════════════════════════╗
+               ║  WEB3FORMS HIDDEN FIELDS                            ║
+               ║  STEP 1 ► Go to https://web3forms.com               ║
+               ║  STEP 2 ► Enter businessgrewdis@gmail.com           ║
+               ║  STEP 3 ► Copy the Access Key you receive           ║
+               ║  STEP 4 ► Paste it in the value="" below            ║
+               ╚══════════════════════════════════════════════════════╝ -->
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+          <input type="hidden" name="subject"    value="New Contact Form Submission — Grewdis" />
+          <input type="hidden" name="from_name"  value="Grewdis Website" />
+          <!-- Honeypot spam protection -->
+          <input type="checkbox" name="botcheck" style="display:none;" />
+
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <label>Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required />
+            <label>Your Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" name="company" placeholder="Company / Brand Name" />
+            <label>Company / Brand Name</label>
+          </div>
+          <div class="form-group">
+            <select name="service">
+              <option value="" disabled selected>Select Service</option>
+              <option>Influencer Campaign</option>
+              <option>Brand Strategy</option>
+              <option>Content Production</option>
+              <option>Social Media Marketing</option>
+              <option>Creator Network</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+            <label>Your Message</label>
+          </div>
+          <button type="submit" class="btn-neon btn-full" id="submitBtn">
+            Send Message <i class="fa fa-paper-plane"></i>
+          </button>
+
+          <!-- Success message -->
+          <div class="form-success" id="formSuccess" style="display:none;">
+            ✅ Message sent! We'll get back to you soon.
+          </div>
+          <!-- Error message -->
+          <div class="form-error" id="formError" style="display:none;">
+            ❌ Oops! Something went wrong. Please try again or email us directly.
+          </div>
+        </form>
+
+        <style>
+          .form-error {
+            margin-top: 16px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            text-align: center;
+            background: rgba(255, 60, 60, 0.12);
+            border: 1px solid rgba(255, 60, 60, 0.4);
+            color: #ff6b6b;
+          }
+          #submitBtn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+          }
+        </style>
+
+        <script>
+          (function () {
+            const form      = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const success   = document.getElementById('formSuccess');
+            const error     = document.getElementById('formError');
+
+            form.addEventListener('submit', async function (e) {
+              e.preventDefault();
+
+              // Reset messages
+              success.style.display = 'none';
+              error.style.display   = 'none';
+
+              // Disable button & show loading state
+              submitBtn.disabled   = true;
+              submitBtn.innerHTML  = 'Sending… <i class="fa fa-spinner fa-spin"></i>';
+
+              const formData = new FormData(form);
+              const object   = Object.fromEntries(formData);
+              const json     = JSON.stringify(object);
+
+              try {
+                const res  = await fetch('https://api.web3forms.com/submit', {
+                  method:  'POST',
+                  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                  body:    json
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                  success.style.display = 'block';
+                  form.reset();
+                } else {
+                  error.style.display = 'block';
+                  console.error('Web3Forms error:', data);
+                }
+              } catch (err) {
+                error.style.display = 'block';
+                console.error('Fetch error:', err);
+              } finally {
+                submitBtn.disabled  = false;
+                submitBtn.innerHTML = 'Send Message <i class="fa fa-paper-plane"></i>';
+              }
+            });
+          })();
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Grewdis" class="footer-logo" onerror="this.style.display='none'"/>
+          <span class="footer-logo-text">GREWDIS</span>
+          <p>India's leading influencer marketing agency — turning creators into brand growth engines.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/grewdis.in/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/grew.disin" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@grewdis" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/company/grewdis/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/grewdis?s=20" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.link/hhix4l" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#creators">Our Creators</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Influencer Campaigns</a></li>
+            <li><a href="#services">Brand Strategy</a></li>
+            <li><a href="#services">Content Production</a></li>
+            <li><a href="#services">Social Media Marketing</a></li>
+            <li><a href="#services">Creator Network</a></li>
+            <li><a href="#services">Analytics & ROI</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa fa-phone"></i> <a href="tel:+918521912184">+91 85219 12184</a></p>
+          <p><i class="fa fa-envelope"></i> <a href="mailto:collab@grewdis.in">collab@grewdis.in</a></p>
+          <p><i class="fa fa-location-dot"></i> Patna, Bihar, India</p>
+          <a href="https://wa.link/hhix4l" target="_blank" class="btn-neon btn-sm wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 <span class="neon-text">Grewdis</span>. All rights reserved. | Designed with 💜 in Patna, Bihar</p>
+        <p class="footer-tagline">Powered by Creativity. Driven by Data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" title="Back to top"><i class="fa fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
