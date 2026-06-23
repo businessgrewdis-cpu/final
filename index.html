@@ -49,6 +49,180 @@
         border-radius: 8px;
       }
     }
+
+    /* ── Why Choose Us Cards ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .why-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.18);
+      border-radius: 16px;
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+    .why-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(139,92,246,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .why-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(139, 92, 246, 0.45);
+      box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
+    }
+    .why-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #8b5cf6;
+      opacity: 0.5;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+    }
+    .why-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(139,92,246,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 1.15rem;
+      color: #8b5cf6;
+      border: 1px solid rgba(139,92,246,0.22);
+    }
+    .why-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .why-card p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .why-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .why-tags span {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(139,92,246,0.1);
+      border: 1px solid rgba(139,92,246,0.2);
+      color: rgba(255,255,255,0.52);
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 0.03em;
+    }
+    @media (max-width: 768px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (min-width: 769px) and (max-width: 1100px) {
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ── Company Profile CTA Section ── */
+    .profile-cta-section {
+      padding: 80px 0 40px;
+    }
+    .profile-cta-inner {
+      background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(139,92,246,0.03) 100%);
+      border: 1px solid rgba(139,92,246,0.25);
+      border-radius: 20px;
+      padding: 56px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .profile-cta-inner::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .profile-cta-inner::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .profile-cta-content .section-label {
+      margin-bottom: 10px;
+    }
+    .profile-cta-content .section-title {
+      margin-bottom: 12px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      text-align: left;
+    }
+    .profile-cta-content .section-sub {
+      margin-bottom: 0;
+      opacity: 0.68;
+      text-align: left;
+    }
+    .profile-cta-btn {
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 15px 32px;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+    .profile-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(139,92,246,0.38);
+    }
+    @media (max-width: 768px) {
+      .profile-cta-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 24px;
+        align-items: center;
+      }
+      .profile-cta-inner::before,
+      .profile-cta-inner::after {
+        display: none;
+      }
+      .profile-cta-content .section-title,
+      .profile-cta-content .section-sub {
+        text-align: center;
+      }
+      .profile-cta-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -213,37 +387,125 @@
     </div>
   </section>
 
-  <!-- ===== STATS SECTION ===== -->
+  <!-- ===== COMPANY PROFILE CTA SECTION ===== -->
+  <section class="profile-cta-section">
+    <div class="container">
+      <div class="profile-cta-inner reveal">
+        <div class="profile-cta-content">
+          <div class="section-label">// OUR WORK</div>
+          <h2 class="section-title">See Our <span class="neon-text">Company Profile</span> &amp; Campaigns</h2>
+          <p class="section-sub">Explore our services, campaigns, creator network, and brand growth solutions in detail.</p>
+        </div>
+        <a href="https://drive.google.com/file/d/1JmURYPtDAWB-PUcBbBOYBd44cwB6765o/view?usp=drive_link"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn-neon profile-cta-btn">
+          View Company Profile &nbsp;<i class="fa fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY BRANDS CHOOSE US SECTION ===== -->
   <section class="stats section" id="stats">
     <div class="stats-bg-glow"></div>
     <div class="container">
-      <div class="section-label">// THE NUMBERS</div>
+      <div class="section-label">// WHY CHOOSE US</div>
       <h2 class="section-title text-center">Why Brands <span class="neon-text">Choose Us</span></h2>
-      <div class="stats-grid">
-        <div class="stat-card reveal">
-          <div class="stat-icon"><i class="fa fa-users"></i></div>
-          <div class="stat-number"><span class="count" data-target="1200">0</span><span class="stat-plus">+</span></div>
-          <div class="stat-label">Active Creators</div>
-          <div class="stat-bar"><div class="stat-fill" style="width:90%"></div></div>
+      <p class="section-sub text-center">We don't run campaigns — we build brand momentum. Every strategy starts with a deep understanding of your brand, your audience, and your goals.</p>
+      <div class="why-grid">
+
+        <!-- 01 Brand-First Strategy -->
+        <div class="why-card reveal">
+          <div class="why-num">01</div>
+          <div class="why-icon"><i class="fa fa-magnifying-glass-chart"></i></div>
+          <h3>Brand-First Strategy</h3>
+          <p>Before recommending any tactic, we conduct a full audit of your brand — analysing sales, awareness, audience behaviour, and competitive positioning. We build a custom strategy tailored to your goals, focused entirely on brand growth.</p>
+          <div class="why-tags">
+            <span>Brand Audit</span>
+            <span>Custom Strategy</span>
+            <span>Data-Driven</span>
+          </div>
         </div>
-        <div class="stat-card reveal">
-          <div class="stat-icon"><i class="fa fa-handshake"></i></div>
-          <div class="stat-number"><span class="count" data-target="87">0</span><span class="stat-plus">%</span></div>
-          <div class="stat-label">Client Retention Rate</div>
-          <div class="stat-bar"><div class="stat-fill" style="width:87%"></div></div>
+
+        <!-- 02 Affiliate Program -->
+        <div class="why-card reveal">
+          <div class="why-num">02</div>
+          <div class="why-icon"><i class="fa fa-percent"></i></div>
+          <h3>Affiliate Program</h3>
+          <p>Built for brands that want sales growth without upfront ad spend. Set a commission and our creator network promotes your products across social media. You only pay when a sale happens — while consistent traffic improves your Google visibility organically.</p>
+          <div class="why-tags">
+            <span>Zero Upfront Cost</span>
+            <span>Performance-Based</span>
+            <span>Improved SEO &amp; Traffic</span>
+          </div>
         </div>
-        <div class="stat-card reveal">
-          <div class="stat-icon"><i class="fa fa-rocket"></i></div>
-          <div class="stat-number"><span class="count" data-target="100">0</span><span class="stat-plus">+</span></div>
-          <div class="stat-label">Campaigns Delivered</div>
-          <div class="stat-bar"><div class="stat-fill" style="width:80%"></div></div>
+
+        <!-- 03 UGC Yodha -->
+        <div class="why-card reveal">
+          <div class="why-num">03</div>
+          <div class="why-icon"><i class="fa fa-video"></i></div>
+          <h3>UGC Yodha</h3>
+          <p>UGC works only when it's strategically made. Our in-house team writes the script, directs the hook, and handles all editing. Creators deliver authentic performance — we deliver strategy and production. The result: scroll-stopping content that drives action.</p>
+          <div class="why-tags">
+            <span>In-House Scripting</span>
+            <span>Professional Editing</span>
+            <span>Hook-First Content</span>
+          </div>
         </div>
-        <div class="stat-card reveal">
-          <div class="stat-icon"><i class="fa fa-globe"></i></div>
-          <div class="stat-number"><span class="count" data-target="15">0</span><span class="stat-plus">+</span></div>
-          <div class="stat-label">Cities Covered</div>
-          <div class="stat-bar"><div class="stat-fill" style="width:70%"></div></div>
+
+        <!-- 04 UGC Arjuna -->
+        <div class="why-card reveal">
+          <div class="why-num">04</div>
+          <div class="why-icon"><i class="fa fa-camera"></i></div>
+          <h3>UGC Arjuna</h3>
+          <p>Full-production UGC, on-site. We arrive with professional cameras, models, and an editing unit. Scripting, shooting, direction, and post-production are all handled end to end. Your only input: the product.</p>
+          <div class="why-tags">
+            <span>On-Site Crew</span>
+            <span>Professional Models</span>
+            <span>Campaign-Ready Output</span>
+          </div>
         </div>
+
+        <!-- 05 Brand Ambassador Program -->
+        <div class="why-card reveal">
+          <div class="why-num">05</div>
+          <div class="why-icon"><i class="fa fa-star"></i></div>
+          <h3>Brand Ambassador Program</h3>
+          <p>We cross-match your brand's audience data with creator insight analytics to find influencers who are a genuine fit — not just popular ones. Selected creators become long-term brand ambassadors, consistently building real recall.</p>
+          <div class="why-tags">
+            <span>Data-Matched Creators</span>
+            <span>Long-Term Partnerships</span>
+            <span>Daily Brand Exposure</span>
+          </div>
+        </div>
+
+        <!-- 06 Vehicle Advertising -->
+        <div class="why-card reveal">
+          <div class="why-num">06</div>
+          <div class="why-icon"><i class="fa fa-car"></i></div>
+          <h3>Vehicle Advertising</h3>
+          <p>Through our established network of fleet and automobile partners, we place your brand's creative across vehicle surfaces — delivering high-frequency impressions to urban audiences every day. Geography-targeted placements, fully coordinated by Grewdis.</p>
+          <div class="why-tags">
+            <span>High Daily Impressions</span>
+            <span>Geography-Targeted</span>
+            <span>Established Fleet Network</span>
+          </div>
+        </div>
+
+        <!-- 07 Railway Advertising -->
+        <div class="why-card reveal">
+          <div class="why-num">07</div>
+          <div class="why-icon"><i class="fa fa-train"></i></div>
+          <h3>Railway Advertising</h3>
+          <p>Railway stations are among India's highest-footfall advertising environments — ideal for rapid, wide brand awareness across diverse audience segments. Budget-flexible placements at select stations, suited for brands at the awareness or consideration stage.</p>
+          <div class="why-tags">
+            <span>High-Footfall Placements</span>
+            <span>Budget-Flexible</span>
+            <span>Mass Brand Awareness</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -399,35 +661,21 @@
             </div>
           </div>
         </div>
-        <form class="contact-form reveal" id="contactForm" method="POST">
-
-          <!-- ╔══════════════════════════════════════════════════════╗
-               ║  WEB3FORMS HIDDEN FIELDS                            ║
-               ║  STEP 1 ► Go to https://web3forms.com               ║
-               ║  STEP 2 ► Enter businessgrewdis@gmail.com           ║
-               ║  STEP 3 ► Copy the Access Key you receive           ║
-               ║  STEP 4 ► Paste it in the value="" below            ║
-               ╚══════════════════════════════════════════════════════╝ -->
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
-          <input type="hidden" name="subject"    value="New Contact Form Submission — Grewdis" />
-          <input type="hidden" name="from_name"  value="Grewdis Website" />
-          <!-- Honeypot spam protection -->
-          <input type="checkbox" name="botcheck" style="display:none;" />
-
+        <form class="contact-form reveal" id="contactForm">
           <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="text" placeholder="Your Name" required />
             <label>Your Name</label>
           </div>
           <div class="form-group">
-            <input type="email" name="email" placeholder="Your Email" required />
+            <input type="email" placeholder="Your Email" required />
             <label>Your Email</label>
           </div>
           <div class="form-group">
-            <input type="text" name="company" placeholder="Company / Brand Name" />
+            <input type="text" placeholder="Company / Brand Name" />
             <label>Company / Brand Name</label>
           </div>
           <div class="form-group">
-            <select name="service">
+            <select>
               <option value="" disabled selected>Select Service</option>
               <option>Influencer Campaign</option>
               <option>Brand Strategy</option>
@@ -438,87 +686,12 @@
             </select>
           </div>
           <div class="form-group">
-            <textarea name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+            <textarea placeholder="Tell us about your project..." rows="5" required></textarea>
             <label>Your Message</label>
           </div>
-          <button type="submit" class="btn-neon btn-full" id="submitBtn">
-            Send Message <i class="fa fa-paper-plane"></i>
-          </button>
-
-          <!-- Success message -->
-          <div class="form-success" id="formSuccess" style="display:none;">
-            ✅ Message sent! We'll get back to you soon.
-          </div>
-          <!-- Error message -->
-          <div class="form-error" id="formError" style="display:none;">
-            ❌ Oops! Something went wrong. Please try again or email us directly.
-          </div>
+          <button type="submit" class="btn-neon btn-full">Send Message <i class="fa fa-paper-plane"></i></button>
+          <div class="form-success" id="formSuccess">✅ Message sent! We'll get back to you soon.</div>
         </form>
-
-        <style>
-          .form-error {
-            margin-top: 16px;
-            padding: 12px 18px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            text-align: center;
-            background: rgba(255, 60, 60, 0.12);
-            border: 1px solid rgba(255, 60, 60, 0.4);
-            color: #ff6b6b;
-          }
-          #submitBtn:disabled {
-            opacity: 0.65;
-            cursor: not-allowed;
-          }
-        </style>
-
-        <script>
-          (function () {
-            const form      = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const success   = document.getElementById('formSuccess');
-            const error     = document.getElementById('formError');
-
-            form.addEventListener('submit', async function (e) {
-              e.preventDefault();
-
-              // Reset messages
-              success.style.display = 'none';
-              error.style.display   = 'none';
-
-              // Disable button & show loading state
-              submitBtn.disabled   = true;
-              submitBtn.innerHTML  = 'Sending… <i class="fa fa-spinner fa-spin"></i>';
-
-              const formData = new FormData(form);
-              const object   = Object.fromEntries(formData);
-              const json     = JSON.stringify(object);
-
-              try {
-                const res  = await fetch('https://api.web3forms.com/submit', {
-                  method:  'POST',
-                  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                  body:    json
-                });
-                const data = await res.json();
-
-                if (data.success) {
-                  success.style.display = 'block';
-                  form.reset();
-                } else {
-                  error.style.display = 'block';
-                  console.error('Web3Forms error:', data);
-                }
-              } catch (err) {
-                error.style.display = 'block';
-                console.error('Fetch error:', err);
-              } finally {
-                submitBtn.disabled  = false;
-                submitBtn.innerHTML = 'Send Message <i class="fa fa-paper-plane"></i>';
-              }
-            });
-          })();
-        </script>
       </div>
     </div>
   </section>
