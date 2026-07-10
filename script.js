@@ -66,12 +66,12 @@ class Particle {
     this.size   = Math.random() * 2 + 0.5;
     this.speedX = (Math.random() - 0.5) * 0.6;
     this.speedY = (Math.random() - 0.5) * 0.6;
-    this.opacity = Math.random() * 0.5 + 0.1;
+    this.opacity = Math.random() * 0.3 + 0.08;
     this.color  = Math.random() > 0.6
-      ? `rgba(0,255,136,${this.opacity})`
+      ? `rgba(0,168,107,${this.opacity})`
       : Math.random() > 0.5
         ? `rgba(123,47,190,${this.opacity})`
-        : `rgba(0,245,255,${this.opacity})`;
+        : `rgba(0,194,214,${this.opacity})`;
     this.pulse  = Math.random() * Math.PI * 2;
     this.pulseSpeed = Math.random() * 0.02 + 0.01;
   }
