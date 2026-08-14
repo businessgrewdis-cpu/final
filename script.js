@@ -329,21 +329,37 @@ const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
-    // Simulate async submission (replace with real backend/EmailJS)
-    setTimeout(() => {
-      contactForm.reset();
-      btn.textContent = 'Send Message ✉';
-      btn.disabled = false;
-      if (formSuccess) {
-        formSuccess.style.display = 'block';
-        setTimeout(() => { formSuccess.style.display = 'none'; }, 5000);
-      }
-    }, 1500);
+
+    const formData = new FormData(contactForm);
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+            contactForm.reset();
+            if (formSuccess) {
+                formSuccess.style.display = 'block';
+                setTimeout(() => { formSuccess.style.display = 'none'; }, 5000);
+            }
+        } else {
+            alert(json.message);
+        }
+    })
+    .catch(error => {
+        alert('Something went wrong!');
+    })
+    .then(function() {
+        btn.textContent = 'Send Message ✉';
+        btn.disabled = false;
+    });
   });
 }
 
