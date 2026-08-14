@@ -762,40 +762,43 @@
             </div>
           </div>
         </div>
-        <form class="contact-form reveal" id="contactForm">
-          <div class="form-group">
-            <input type="text" placeholder="Your Name" required />
-            <label>Your Name</label>
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="Your Email" required />
-            <label>Your Email</label>
-          </div>
-          <div class="form-group">
-            <input type="text" placeholder="Company / Brand Name" />
-            <label>Company / Brand Name</label>
-          </div>
-          <div class="form-group">
-            <select>
-              <option value="" disabled selected>Select Service</option>
-              <option>Influencer Campaign</option>
-              <option>Brand Strategy</option>
-              <option>Content Production</option>
-              <option>Social Media Marketing</option>
-              <option>Creator Network</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <textarea placeholder="Tell us about your project..." rows="5" required></textarea>
-            <label>Your Message</label>
-          </div>
-          <button type="submit" class="btn-neon btn-full">Send Message <i class="fa fa-paper-plane"></i></button>
-          <div class="form-success" id="formSuccess">✅ Message sent! We'll get back to you soon.</div>
-        </form>
-      </div>
-    </div>
-  </section>
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form reveal" id="contactForm">
+  <input type="hidden" name="access_key" value="81402534-36e9-48cd-a5cb-9c56f7b9ba4f">
+  
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <label>Your Name</label>
+  </div>
+  
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Your Email" required />
+    <label>Your Email</label>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="company" placeholder="Company / Brand Name" />
+    <label>Company / Brand Name</label>
+  </div>
+
+  <div class="form-group">
+    <select name="service" required>
+      <option value="" disabled selected>Select Service</option>
+      <option value="Influencer Campaign">Influencer Campaign</option>
+      <option value="Brand Strategy">Brand Strategy</option>
+      <option value="Content Production">Content Production</option>
+      <option value="Social Media SMM">Social Media SMM</option>
+      <option value="Other">Other</option>
+    </select>
+    <label>Service Needed</label>
+  </div>
+
+  <div class="form-group">
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <label>Your Message</label>
+  </div>
+
+  <button type="submit" class="btn-neon">Send Message <i class="fa fa-paper-plane"></i></button>
+</form>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
